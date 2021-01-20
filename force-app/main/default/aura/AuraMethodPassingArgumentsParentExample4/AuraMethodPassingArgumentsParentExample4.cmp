@@ -1,0 +1,15 @@
+<aura:component>
+    <aura:attribute name="isOn" type="Boolean" default="false" />
+    
+    <aura:method name="toggleLight" action="{!c.toggleLight}">
+        <aura:attribute name="turnOn" type="Boolean" /> 
+    </aura:method>
+    
+    <aura:if isTrue="{!v.isOn}">
+        Light is on!
+        <aura:set attribute="else">
+            Light is off
+        </aura:set>
+    </aura:if>
+    
+</aura:component>

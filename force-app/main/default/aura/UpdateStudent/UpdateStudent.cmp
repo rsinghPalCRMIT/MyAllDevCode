@@ -1,0 +1,38 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="CheckUserPermission">
+	<aura:registerEvent name="navEvt" type="force:navigateToSObject"/>
+	<aura:handler name="init" value="{!this}" action="{!c.callServer}"/>
+	<aura:attribute name="myAttribute" type="String" default="Hello World"/>
+	<aura:attribute name="ShowFields" type="boolean" default="False"/>
+	<aura:attribute name="recordError" type="String"/>
+	<aura:attribute name="recordInfo" type="Object" />
+	<aura:attribute name="simpleRecord" type="Object"/>
+	<aura:attribute name="curView" type="String" />
+	<force:recordData aura:id="recordHandler"
+                      recordId="{!v.recordId}"
+                      layoutType="COMPACT"
+                      targetRecord="{!v.recordInfo}"  
+                      targetFields="{!v.simpleRecord}"
+                      mode="EDIT"/>
+	<!--aura:if sample -->
+	<aura:if  isTrue="{!v.ShowFields}" >
+		<div class="slds-form--stacked">
+			<div class="slds-form-element">
+				<lightning:input type="text" label="Name" value="{!v.simpleRecord.Name}" />
+			</div>
+			<div class="slds-form-element">
+				<lightning:select aura:id="accDesc" label="Industry" value="{!v.simpleRecord.Industry}">
+					<option value="">choose one...</option>
+					<option value="Banking">Banking</option>
+					<option value="Apparel">Apparel</option>
+					<option value="Education">Education</option>
+				</lightning:select>
+			</div>
+			<div class="slds-form-element">
+				<lightning:input type="text" label="Description" value="{!v.simpleRecord.Description}" />
+			</div>
+			<div class="slds-form-element">
+				<lightning:button variant="brand" label="Save" onclick="{!c.saveRecordCntrlr}"/>
+			</div>
+		</div>
+	</aura:if>
+</aura:component>

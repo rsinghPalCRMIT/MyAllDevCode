@@ -1,0 +1,67 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+    access="global">
+    <aura:attribute name="expenseitem" type="Expense_Tracker__c"/>
+    <aura:attribute name="rowIndex" type="String" />
+    <aura:registerEvent name="AddRowEvt" type="c:AddNewRowEvt"/>
+    <aura:registerEvent name="DeleteRowEvt" type="c:DeleteRowEvt"/> 
+    <tr >
+        <td> 
+            {!v.rowIndex + 1}
+        </td>
+        <td>
+           <!-- <ui:inputText class="slds-input" value="{!v.expenseitem.Item_Name__c}"/>-->
+            <lightning:input name="accName" type="text" value="{!v.expenseitem.Item_Name__c}" />
+        </td>
+        <td>
+          <!--  <ui:inputDate aura:id="expdate" class="slds-input" value="{!v.expenseitem.Purchased_On__c}" displayDatePicker="true" />      -->
+          <lightning:input name="accName" type="date" value="{!v.expenseitem.Purchased_On__c}" />
+
+        </td>
+        <td>
+          <!--  <ui:inputText class="slds-input" value="{!v.expenseitem.Purchased_Month__c}"/>
+            <ui:inputSelect class="dynamic" value="{!v.expenseitem.Purchased_Month__c}"/>-->
+            <lightning:select  aura:id="myselection" value="{!v.expenseitem.Purchased_Month__c}">
+                <option value="">choose one...</option>
+                <option value="JANUARY">JANUARY</option>
+                <option value="FEBRUARY">FEBRUARY</option>
+                <option value="MARCH">MARCH</option>
+                <option value="APRIL">APRIL</option>
+                <option value="MAY">MAY</option>
+                <option value="JUNE">JUNE</option>
+                <option value="JULY">JULY</option>
+                <option value="AUGUST">AUGUST</option>
+                <option value="SEPTEMBER">SEPTEMBER</option>
+                <option value="OCTOBER">OCTOBER</option>
+                <option value="NOVEMBER">NOVEMBER</option>
+                <option value="DECEMBER">DECEMBER</option>
+              <!--  <aura:iteration items="{!v.options}" item="option">
+                <option value="{!option}">{!option}</option>
+                </aura:iteration>-->
+                </lightning:select>
+        </td>
+        <td>
+          <lightning:input name="accName" type="number" maxlength="50" value="{!v.expenseitem.Amount__c}" />
+        </td>
+        <td>
+       <!--  <ui:inputText class="slds-input" value="{!v.expenseitem.Comments__c}"/>-->
+         <lightning:input name="accName" type="text" maxlength="50" value="{!v.expenseitem.Comments__c}" />
+        </td>
+        <td>
+            <!-- conditionally Display Add or Delete Icons
+                if rowIndex is 0 then show Add New Row Icon else show delete Icon
+             --> 
+            <aura:if isTrue="{!v.rowIndex == 0}">
+                <a onclick="{!c.AddNewRow}">
+                  <lightning:icon iconName="utility:add" class="slds-icon slds-icon_small" size="small" alternativeText="add"/>
+                  <span class="slds-assistive-text">Add Icon</span>
+                </a>    
+                <aura:set attribute="else">
+                    <a onclick="{!c.removeRow}">
+                    <lightning:icon variant="error" iconName="utility:delete" class="slds-icon slds-icon_small" size="small" alternativeText="icon"/>
+                    <span class="slds-assistive-text">Delete Icon</span>
+                    </a>
+                </aura:set> 
+            </aura:if>
+        </td> 
+    </tr>
+</aura:component>

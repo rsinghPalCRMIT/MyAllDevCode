@@ -1,0 +1,26 @@
+<apex:page standardController="Account">
+<script type="text/javascript">
+function test()
+{
+
+var accname=document.getElementById("{!$Component.f.pb1.pbs1.a}").value;
+alert(accname);
+var message=document.getElementById("{!$Component.f.pb1.msg}").innerText;
+alert(message);
+
+}
+
+</script>
+
+<apex:form id="f">
+<apex:pageBlock id="pb1">
+<apex:pageMessages id="msg" />
+<apex:pageBlockSection id="pbs1">
+<apex:inputField value="{!account.name}" id="a" />
+<apex:inputField value="{!account.industry}"/>
+<apex:commandButton action="{!save}" value="Save!"/>
+<apex:commandButton onclick="test();" value="test" reRender="msg"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

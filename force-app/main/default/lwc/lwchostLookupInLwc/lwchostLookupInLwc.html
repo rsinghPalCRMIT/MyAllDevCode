@@ -1,0 +1,17 @@
+<!--
+  @File Name          : lwchostLookupInLwc.html
+  @Description        : 
+  @Author             : Rohit Pal
+  @Group              : 
+  @Last Modified On   : 5/12/2020, 3:23:43 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    5/12/2020          Rohit Pal     Initial Version
+-->
+<template>
+    <div class="slds-card">
+        <c-lwc-custom-lookup field-label="Select Account Record" child-object-api-name='Opportunity'
+            target-field-api-name='AccountId' required onvalueselected={handleValueSelcted}></c-lwc-custom-lookup>
+        The selected record Id is:- {selectedRecordId}
+    </div>
+</template>

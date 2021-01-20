@@ -1,0 +1,50 @@
+<aura:component controller="LightningToDoTaskComponentController" implements="flexiPage:availableForAllPageTypes" access="Global">
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>   
+    <aura:attribute name="objTaskInfo" type ="ToDo__c" default="{'sobjectType' : 'ToDo__c'}"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="today" type="Date" description="To set todays date as mimimum value for Due date and reminder date"/>
+    <lightning:card title="Task">
+        <aura:set attribute="actions">
+            <lightning:buttonicon iconName="utility:chevrondown" alternativeText="down icon" onclick="{!c.toggleForm}"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            Create Your To do List Today!
+        </p>
+        <div aura:id="formDiv" class="slds-size_1-of-1 slds-p-around_medium">
+        <lightning:textarea aura:id="todoForm"
+                            type="String"
+                            label="Task Description"
+                            value="{!v.objTaskInfo.Description__c}"
+                            required="true"
+                            messageWhenValueMissing="Enter description" />
+       
+         <lightning:input   aura:id="todoForm"
+                            type="Date"
+                            label="Due date"
+                            value="{!v.objTaskInfo.Due_Date__c}"
+                            required="true"
+                            messageWhenValueMissing="Enter due date"
+                            min="{!v.today}"
+                            onchange="{!c.setMaxValueOfReminderDate}"/>
+           
+        <lightning:input    aura:id="reminderDate"
+                            type="Date"
+                            disabled="true"
+                            label="Reminder date"
+                            value="{!v.objTaskInfo.Reminder_Date__c}"
+                            min="{!v.today}"/>
+           
+        <lightning:button   class="slds-m-top_small" 
+                             label="Create Task"
+                             variant="brand"
+                             onclick="{!c.saveTodo}"/>
+        </div>
+    </lightning:card>
+    <div class="slds-m-vertical_large">
+        <lightning:datatable keyField="id"
+                             data="{! v.data }"
+                             columns="{! v.columns }"
+                             hideCheckboxColumn="true"/>
+    </div>
+</aura:component>

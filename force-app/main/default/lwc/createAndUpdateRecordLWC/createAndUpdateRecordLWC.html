@@ -1,0 +1,47 @@
+<!--
+  @File Name          : Rohit
+  @Description        : 
+  @Author             : Rohit
+  @Group              : 
+  @Last Modified On   : 18/5/2020, 4:28:14 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    18/5/2020   Rohit     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Account Table" icon-name="standard:account">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered">
+            <tr>
+                <th>
+                    Account Name
+                </th>
+                <th>
+                    Account Phone
+                </th>
+                <th>
+                    Account Description
+                </th>  
+            </tr>
+            <template for:each={accounts.data} for:item="acc" for:index="index">
+                <tr key={acc.Id}>
+                    <td>
+                        {acc.Name}
+                    </td>
+                    <td>
+                        {acc.Phone}
+                    </td>
+                    <td>
+                        {acc.Description}
+                    </td>
+                    <td>
+                        <lightning-button variant="brand" 
+                                          label="Update" 
+                                          value={acc.Id}
+                                          onclick={handleUpdate}>
+                        </lightning-button>
+                    </td>
+                </tr>
+            </template>
+        </table>
+    </lightning-card>
+</template>

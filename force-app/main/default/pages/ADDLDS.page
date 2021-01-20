@@ -1,0 +1,20 @@
+<apex:page lightningStylesheets="true">
+
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+  <thead>
+    <tr class="slds-text-title_caps">
+      <th scope="col">
+        <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+      </th>
+  </tr>
+  </thead>
+<tbody>
+    <tr>
+       <td data-label="Opportunity Name">
+        <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+      </td>
+   </tr>
+  </tbody>
+</table>
+
+</apex:page>

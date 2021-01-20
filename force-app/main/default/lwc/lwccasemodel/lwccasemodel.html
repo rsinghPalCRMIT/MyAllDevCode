@@ -1,0 +1,47 @@
+<!--
+  @File Name          : lwccasemodel.html
+  @Description        : 
+  @Author             : 
+  @Group              : 
+  @Last Modified On   : 4/15/2020, 11:42:55 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/15/2020        Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Quick Case" icon-name="standard:case">
+        <div class="slds-m-around_small">
+            <lightning-input type="text" 
+                              variant="standard" 
+                              name="name" 
+                              label="Case Subject" 
+                              value={subject}
+                              placeholder="type here..."
+                              onchange={handleChange}></lightning-input>
+            <lightning-textarea value={description} 
+                                label="Case Description"
+                                name="Description"
+                                onchange={handleChange}></lightning-textarea>
+            <lightning-combobox name="CaseStatus"
+                                label="Case Status"
+                                value={statusVal}
+                                placeholder="Select status"
+                                options={status}
+                                onchange={handleChange}></lightning-combobox>
+            <lightning-combobox name="CaseOrigin"
+                                label="Case Origin"
+                                value={originVal}
+                                placeholder="Select Origin"
+                                options={origin}
+                                onchange={handleChange}></lightning-combobox>
+            <lightning-combobox name="CasePriority"
+                                label="Case priorty"
+                                value={priortyVal}
+                                placeholder="Select priorty"
+                                options={priorty}
+                                onchange={handleChange}></lightning-combobox>
+        </div>
+        <lightning-button variant="brand" label="Create Case" title="titleName" onclick={handleCreate}></lightning-button>
+
+    </lightning-card>
+</template>

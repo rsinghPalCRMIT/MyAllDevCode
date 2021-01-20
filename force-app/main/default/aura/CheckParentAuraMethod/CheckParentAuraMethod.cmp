@@ -1,0 +1,16 @@
+<!--
+  @File Name          : CheckChildAuraMethod.cmp
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified On   : 2/19/2020, 3:53:30 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/19/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<aura:component>
+    <div class="slds-m-around_xx-large">
+    <c:CheckChildAuraMethod aura:id="childCmp"/>
+    <lightning:button variant="brand" label="Click Here" title="Click" onclick="{! c.callChildAMethod }" />
+    </div>
+</aura:component>

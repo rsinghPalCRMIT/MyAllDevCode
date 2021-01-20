@@ -1,0 +1,25 @@
+<!--
+  @File Name          : lwcObjectLookupSearchComponent.html
+  @Description        : 
+  @Author             : Rohit
+  @Group              : 
+  @Last Modified On   : 20/5/2020, 10:25:32 am
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    20/5/2020   Rohit     Initial Version
+-->
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_4-of-4">
+            <div>
+                <lightning-input variant="label-hidden" 
+                                 label="Search Record" 
+                                 value={searchKey} 
+                                 type="search"
+                                 onchange={handleChange}
+                                 placeholder="type text here">
+                </lightning-input>
+            </div>
+        </div>
+    </div>
+</template>

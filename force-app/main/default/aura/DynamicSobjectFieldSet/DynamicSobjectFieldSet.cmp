@@ -1,0 +1,23 @@
+<aura:component controller="DynamicSobjectFieldSetClass" 
+				implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	<aura:attribute name="FieldSetName" type="String"/>
+<aura:attribute name="FieldSetName1" type="String"/>
+	<aura:attribute name="AllFiedsetinfo" type="String[]"/>
+
+
+	<div>
+		<h1>This is used to show field dynamically from field set</h1>
+		<div class="slds-form-element">
+			<label class="slds-form-element__label" for="text-input-id-1">Sobject Field Set</label>
+			<div class="slds-form-element__control">
+				<input type="text" id="text-input-id-1" class="slds-input" placeholder="Please Enter a Field Set Name" value="{!v.FieldSetName}"/>
+			</div>
+	<ui:button label="Show" press="{!c.loadData}"/>
+			 	
+        	<aura:iteration items="{!v.AllFiedsetinfo}" var="cus">
+            	{!cus}
+        	</aura:iteration>
+        			</div>
+	</div>
+		
+</aura:component>

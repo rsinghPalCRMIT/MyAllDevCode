@@ -1,0 +1,15 @@
+<apex:page controller="AccountRemoter1">
+<apex:form >
+  <apex:inputText label="Input" value="{!accountName}"/>
+  <apex:commandButton value="Get Account" action="{!getAccount}"/>
+  <apex:commandButton value="Clear records" action="{!clear}"/>
+     {!isValid}
+    <apex:pageBlock title="Search Result" rendered="{!isValid}"> 
+        {!isValid}
+       <apex:pageBlockTable value="{!account}" var="a">
+                <apex:column value="{!a.name}"/>
+                <apex:column value="{!a.id}"/>
+            </apex:pageBlockTable>  
+    </apex:pageBlock>   
+    </apex:form>
+</apex:page>

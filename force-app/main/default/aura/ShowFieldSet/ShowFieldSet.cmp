@@ -1,0 +1,8 @@
+<aura:component controller="AccessFieldSet" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute type="List" name="Interlocuteurs"/>
+    
+    <aura:iteration items="{!v.Interlocuteurs}" var="Interl">
+        <ui:inputText label="{!Interl}" value=" " required="true"/>
+    </aura:iteration>
+</aura:component>

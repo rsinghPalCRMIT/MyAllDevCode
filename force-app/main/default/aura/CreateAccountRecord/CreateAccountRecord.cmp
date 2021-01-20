@@ -1,0 +1,118 @@
+<aura:component controller="CreateAccountRecord" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+				access="global" >
+	<!-- Define Attribute-->
+    <aura:attribute name="account" type="Account" default="{'sobjectType': 'Account',
+                         'Name': '',
+                         'Phone': '',
+                         'AccountNumber': '', 
+                         'Fax': ''
+                       }"/>
+    <aura:attribute name="acc" type="Account[]"/>
+     <aura:attribute name="kycCreateChildList" type="Account[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div>	
+        <h3>Please Enter The Account Information</h3>
+        <div>
+            <!--label>Account Name</label-->
+            <ui:inputText class="form-control" label="Account Name" labelClass="uiLabel-top" value="{!v.account.Name}"/>
+        </div>
+        <div>
+           
+            <ui:inputText class="form-control" label="Account Phone" labelClass="uiLabel-top" value="{!v.account.Phone}"/>
+        </div>
+        <div>
+            
+            <ui:inputText class="form-control" label="Account Number" labelClass="uiLabel-top" value="{!v.account.AccountNumber}"/>
+        </div>
+        <div>
+            
+            <ui:inputText class="form-control" label="Account Fax" labelClass="uiLabel-top" value="{!v.account.Fax}"/>
+        </div>
+    </div>
+    <div>
+        <ui:button class="btn btn-default" press="{!c.create}">Create</ui:button>
+  </div>
+    <div>
+    	<h1>The Saved Record Information is</h1>
+        <table class="myClass slds-table slds-table--bordered slds-table--cell-buffer">
+    <thead>
+    <tr class="slds-text-heading--label">
+        <th scope="col">
+            <div class="slds-truncate" title="Cat Name">Name</div>
+        </th>
+        <th scope="col">
+            <div class="slds-truncate" title="Nickname">Phone</div>
+        </th>
+        <th scope="col">
+            <div class="slds-truncate" title="Gender">AccountNumber</div>
+        </th>
+        <th scope="col">
+            <div class="slds-truncate" title="Breed">Fax</div>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <aura:iteration items="{!v.acc}" var="cat">
+		<tr>
+            <td>{!cat.Name}</td>
+            <td>{!cat.Phone}</td>
+            <td>{!cat.AccountNumber}</td>
+            <td>{!cat.Fax}</td>
+            <!-- more fields here --> 
+        </tr>
+    </aura:iteration>
+    </tbody>
+</table>
+    </div>
+    <div>
+        <h1>Add / Delete Row Functions :</h1>
+        <table class="myClass slds-table slds-table--bordered slds-table--cell-buffer"> 
+        <thead>
+            <tr class="slds-text-heading--label">
+                <th scope="col">
+                    <div class="slds-truncate">S.No</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Locale">Account Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Last Name">Phone</div>
+                </th>
+            </tr>
+        </thead>   
+        <tbody>     
+            <aura:iteration items="{!v.kycCreateChildList}" var="item" indexVar="index">
+                <tr class="slds-text-title_caps">
+                    <td> 
+                        {!index+ 1}
+                    </td>
+                    <td>
+                        <ui:inputText class="slds-input" value="{!item.Name}"/>                    
+                    </td>
+                    <td>
+                        <ui:inputText class="slds-input" value="{!item.Phone}"/>
+                    </td>
+                    <td>
+                    <!-- conditionally Display Add or Delete Icons
+                         if rowIndex is 0 then show Add New Row Icon else show delete Icon
+                     --> 
+                    <aura:if isTrue="{!index == 0}">
+                        <a onclick="{!c.addNewRow}">
+                          	<lightning:icon iconName="utility:add" class="slds-icon slds-icon_small" size="small" alternativeText="add"/>
+                          <span class="slds-assistive-text">Add Icon</span>
+                        </a>    
+                      <aura:set attribute="else">
+                          <a onclick="{!c.removeRow}" data-rowIndex="{!index}">
+                           		<lightning:icon variant="error" iconName="utility:delete" class="slds-icon slds-icon_small" size="small" alternativeText="icon"/>
+                           <span class="slds-assistive-text">Delete Icon</span>
+                          </a>
+                      </aura:set> 
+                    </aura:if>
+                </td> 
+    	</tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+    </div>
+        
+</aura:component>

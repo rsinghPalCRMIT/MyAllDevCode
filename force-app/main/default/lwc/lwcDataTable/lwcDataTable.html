@@ -1,0 +1,32 @@
+<!--
+  @File Name          : lwcDataTable.html
+  @Description        : 
+  @Author             : Rohit Pal
+  @Group              : 
+  @Last Modified On   : 4/17/2020, 8:47:08 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/17/2020   Rohit Pal     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:account">
+        <div class="slda-m-around_samall">
+        <lightning-input label="Contact Name"
+                         value={lastName}
+                         onchange={handleChange}></lightning-input>
+                         <template if:true = {data}> 
+            <lightning-datatable
+                key-field="id"
+                data={data}
+                show-row-number-column
+                row-number-offset={rowOffset}
+                suppress-bottom-bar
+                columns={columns}>
+        </lightning-datatable>
+    </template>
+    <template if:true = {error}> 
+        {error}> 
+    </template> 
+        </div>
+    </lightning-card>
+</template>

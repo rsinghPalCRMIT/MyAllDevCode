@@ -1,0 +1,42 @@
+<!--
+  @File Name          : lwcCallApexMethod.html
+  @Description        : 
+  @Author             : Rohit
+  @Group              : 
+  @Last Modified On   : 4/16/2020, 5:31:07 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/16/2020   Rohit     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Case Details" icon-name="standard:case">
+        <div class="slds-m-around_small">
+            <lightning-input label="Case Subject"
+                             value={subject}
+                             onchange={handleChange}></lightning-input>
+            <!--
+            <template for:each={cases.data} for:item="item">
+                <p key={item.Id}>
+                        {item.Subject}<br/>
+                        {item.Origin}
+                </p>    
+            </template>
+            <template if:true={cases.error}>
+                there is an error 
+            </template>-->
+            <template for:each={records} for:item="item">
+                <p key={item.Id}>
+                        {item.Subject}<br/>
+                        {item.Origin}
+                </p>    
+            </template>
+            <template if:false={records}>
+                no record found
+            </template>
+            <template if:true={errors}>
+                there is an error 
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

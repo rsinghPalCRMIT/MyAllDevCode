@@ -1,0 +1,41 @@
+<apex:page controller="checkScriptController">
+
+  <script>
+   var varA = '{!varConA}';
+   console.log('@@@ ' + varA);
+ 
+  function shoe(){
+      var varA = '{!varConA}';
+      console.log('@@@ shoe' + varA);
+      
+  }
+  shoe();
+  
+  </script>
+  
+   <script>
+        function recaptcha_callback() {      
+            var token = 'Hello';
+              Visualforce.remoting.Manager.invokeAction(
+              '{!$RemoteAction.checkScriptController.verify}',token,
+                  function(result, event){
+                  if (event.status) {
+                 
+                      }
+
+                  });
+        }
+        recaptcha_callback();
+   </script>
+   
+   
+  <apex:form >
+  <apex:actionFunction action="{!showInfor}" name="rerenderleftOPanel" reRender="refreshOutputtext" />
+
+      <apex:pageBlock id="block">
+              <apex:outputText id="refreshOutputtext"></apex:outputText>
+    </apex:pageBlock>
+      <apex:commandButton value="save" action="{!showInfor}" reRender="ref"/>
+  </apex:form>
+
+</apex:page>

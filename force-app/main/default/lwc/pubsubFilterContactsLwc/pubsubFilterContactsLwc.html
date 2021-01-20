@@ -1,0 +1,22 @@
+<!--
+  @File Name          : pubsubFilterContactsLwc.html
+  @Description        : 
+  @Author             : Rohit
+  @Group              : 
+  @Last Modified On   : 19/5/2020, 9:33:30 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    19/5/2020   Rohit     Initial Version
+-->
+<template>
+    <lightning-card title={componentLabel} icon-name="standard:filter">
+        <div class="slds-m-around_medium">
+            <p>Value being typed @@@ : {filterValue}</p>
+            <lightning-input type="text" label="Filter By Name" onchange={handleChange}></lightning-input>
+            <br></br>
+
+            <lightning-button variant="brand" label="Filter" title="Filter by Name" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,30 @@
+<!--
+  @File Name          : bearSupervisor.html
+  @Description        : 
+  @Author             : Rohit
+  @Group              : 
+  @Last Modified On   : 4/22/2020, 3:11:15 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/22/2020   Rohit     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <!-- Show supervisor when bear is loaded -->
+            <template if:true={bear.data}>
+                <lightning-record-form
+					object-api-name="Contact"
+					record-id={supervisorId}
+					layout-type="Compact">
+				</lightning-record-form>
+            </template>
+            <!-- Data failed to load -->
+			<template if:true={bear.error}>
+				<div class="slds-text-color_error">
+					An error occurred while loading the bear record
+				</div>
+			</template>
+        </div>
+    </lightning-card>
+</template>

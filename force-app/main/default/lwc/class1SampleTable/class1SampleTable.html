@@ -1,0 +1,40 @@
+<!--
+  @File Name          : class1SampleTable.html
+  @Description        : 
+  @Author             : Rohit
+  @Group              : 
+  @Last Modified On   : 19/5/2020, 3:47:35 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    19/5/2020   Rohit     Initial Version
+-->
+<template>
+  <lightning-card  variant="Narrow"  title="My Account Info" icon-name="standard:account">
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+          <tr>
+              <th>
+                    Account Name
+              </th>
+              <th>
+                Account Phone
+            </th>
+            <th>
+                Account Description
+            </th>
+          </tr>
+          <template for:each={accounts.data} for:item="acc">
+            <tr key={acc.id}>
+                <th>
+                    {acc.Name}
+                </th>
+                <th>
+                    {acc.Phone}
+              </th>
+              <th>
+                {acc.Description}
+              </th>
+            </tr>
+          </template>
+      </table>
+  </lightning-card>
+</template>

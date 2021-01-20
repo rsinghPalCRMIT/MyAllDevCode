@@ -1,0 +1,25 @@
+<!--
+  @File Name          : lwcEditRecordForm.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 4/16/2020, 3:54:40 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/16/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="LWC View Record Form" icon-name="standard:account">
+        <div class="slds-m-around_small">
+            <lightning-record-form
+                        record-id={recordId}
+                        object-api-name={objectApiName}
+                        layout-type="Full"
+                        mode="Edit"
+                        columns="2">
+               
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

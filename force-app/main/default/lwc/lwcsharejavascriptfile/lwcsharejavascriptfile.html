@@ -1,0 +1,21 @@
+<!--
+  @File Name          : lwcsharejavascriptfile.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 4/15/2020, 10:23:03 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/15/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <lightning-input value={p} label="p Amount"></lightning-input>
+    <lightning-input value={t} label="t Amount"></lightning-input>
+    <lightning-input value={r} 
+    type="number"
+                     label="Rate Iterest"
+                     step="1"
+                     formatter="percent-fixed"></lightning-input>
+                     <lightning-button variant="base" label="labelName" title="titleName" onclick={calculateIntrest}></lightning-button>
+</template>

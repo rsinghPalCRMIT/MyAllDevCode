@@ -1,0 +1,13 @@
+<aura:component controller="LCWrapperClassController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+	<aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:attribute name="accountsItems" type="object" default=""/>
+    <table>
+        <th>Name</th>
+    <aura:iteration items="{!v.accountsItems}" var="trs2">
+       <tr>{!trs2.strName}</tr>
+       <aura:iteration items="{!trs2.childItems}" var="trs3">
+        <tr>{!trs3.strName}</tr>
+       </aura:iteration>
+    </aura:iteration>
+ </table>
+</aura:component>

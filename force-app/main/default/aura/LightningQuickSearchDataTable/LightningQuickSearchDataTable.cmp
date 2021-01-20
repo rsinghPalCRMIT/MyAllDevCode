@@ -1,0 +1,17 @@
+<aura:component controller="LightningQuickSearchDataTableController" Implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:attribute name="accountName" type="String"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+    <lightning:card title="Search Account">
+        <lightning:input label="Search Account" value="{!v.accountName}" onchange="{!c.init}"/>
+    </lightning:card>
+    <div style="height: 300px">
+        <lightning:datatable keyField="id"
+                             data="{! v.data }"
+                             columns="{! v.columns }"
+                             hideCheckboxColumn="true"/>
+    </div>
+</aura:component>

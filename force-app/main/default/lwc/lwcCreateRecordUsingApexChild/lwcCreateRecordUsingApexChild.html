@@ -1,0 +1,30 @@
+<!--
+  @File Name          : lwcCreateRecordUsingApexChild.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 4/21/2020, 5:59:31 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/20/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Create Account" icon-name="standard:account">
+        <lightning-input label="Account Name"
+                         onchange={handleChange}
+                         value={AccountName}></lightning-input>
+        <lightning-input label="Account Phone"
+                         onchange={handleChange}
+                         value={AccountPhoneNumber}></lightning-input>
+        <lightning-input label="Account Description"
+                         onchange={handleChange}
+                         value={AccountDescription}></lightning-input>
+                         
+        <lightning-button variant="brand" 
+                          label="Create Account" 
+                          title="titleName" 
+                          onclick={createAccountRecord}></lightning-button>
+    </lightning-card>
+    
+</template>

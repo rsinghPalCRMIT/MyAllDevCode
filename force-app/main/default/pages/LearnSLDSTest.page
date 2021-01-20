@@ -1,0 +1,28 @@
+<apex:page showHeader="False" lightningStylesheets="true">
+
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+<fieldset class="slds-form-element">
+    <legend class="slds-form-element__legend slds-form-element__label">Checkbox Group label</legend>
+    <div class="slds-form-element__control">
+      <span class="slds-checkbox">
+        <input type="checkbox" name="default" id="checkbox-1" value="on"/>
+        <label class="slds-checkbox__label" for="checkbox-1">
+          <span class="slds-checkbox_faux"></span>
+          <span class="slds-form-element__label">All opportunities owned by you</span>
+        </label>
+      </span>
+      <span class="slds-checkbox">
+        <input type="checkbox" name="default" id="checkbox-2" value="on"/>
+        <label class="slds-checkbox__label" for="checkbox-2">
+          <span class="slds-checkbox_faux"></span>
+          <span class="slds-form-element__label">All contacts in the account owned by you</span>
+        </label>
+      </span>
+    </div>
+  </fieldset>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,5 @@
+<aura:component>
+    <c:AuraMethodPassingArgumentsParentExample4 aura:id="lamp" />
+    <button onclick="{!c.turnLampOn}">Turn on</button>
+    <button onclick="{!c.turnLampOff}">Turn off</button>
+</aura:component>

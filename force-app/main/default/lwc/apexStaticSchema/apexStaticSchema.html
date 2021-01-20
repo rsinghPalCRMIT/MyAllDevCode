@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @group             : 
+  @last modified on  : 07-27-2020
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   07-27-2020   Rohit   Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Contact Information" icon-name="standard:contact">
+        <template if:true={contact.data}>
+            <div class="slds-var-m-around_medium">
+                <p>{name}</p>
+                <p>{title}</p>
+                <p>
+                    <lightning-formatted-email
+                        value={email}
+                    ></lightning-formatted-email>
+                </p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

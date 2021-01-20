@@ -1,0 +1,5 @@
+({
+	addAccount : function(component, accountName) {
+        
+	}
+})

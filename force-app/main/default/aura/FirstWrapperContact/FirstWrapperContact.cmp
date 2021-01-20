@@ -1,0 +1,42 @@
+<aura:component controller="FirstWrapperContactController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+	<aura:handler name="init" value="{!this}" action="{!c.loadData}"/>
+    <aura:attribute name="wrapperclass" type="object"/>
+     <div class="slds-p-around--large">
+     	<h1 style="font-size:25px;">{!v.wrapperclass.headermEssage}</h1> 
+     	<br/>
+     	<p style="color:red">Total Contacts = {!v.wrapperclass.TotalCount}</p>
+          <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+      <thead>
+        <tr class="slds-text-title--caps">
+          <th scope="col">
+            <div class="slds-truncate" title="Id">First Name</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Name">Last Name</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Email">Department</div>
+          </th>
+        </tr>
+      </thead>
+      <!--table body start, 
+        Iterate contact list as a <tr>
+        -->
+      <tbody>
+        <aura:iteration items="{!v.wrapperclass.lstcontact}" var="con">
+          <tr>
+            <th scope="row">
+              <div class="slds-truncate" title="{!con.Id}">{!con.Id}</div>
+            </th>
+            <th scope="row">
+              <div class="slds-truncate" title="{!con.Name}">{!con.Name}</div>
+            </th>
+            <th scope="row">
+              <div class="slds-truncate" title="{!con.Email}">{!con.Email}</div>
+            </th>
+          </tr>
+        </aura:iteration>
+      </tbody>
+    </table>
+    </div>
+</aura:component>

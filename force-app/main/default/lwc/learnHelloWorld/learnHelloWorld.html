@@ -1,0 +1,23 @@
+<template>
+    <!-- Don’t add spaces around the property, for example, { name } is not valid HTML -->
+    Hello {name}
+    <input type="text" value={name} onchange={changeName} name="Enter Your Input"/>
+
+
+    <!--
+        Use Getters to Compute a Value
+    -->
+    Uppercase FullName of the : {uppercasedFullName}
+
+    <!--
+        Display or user for each loop
+    -->
+    <h3>Contact List</h3>
+    <ul>
+        <template for:each={contacts} for:item="contact">
+            <li key={contact.Id}>
+                    {contact.Name}, {contact.Title}
+            </li>
+        </template>
+    </ul>
+</template>

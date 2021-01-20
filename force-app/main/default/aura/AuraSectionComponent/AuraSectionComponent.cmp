@@ -1,0 +1,30 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	<p class="slds-p-horizontal_small slds-m-top_small slds-m-left_large">
+    	<div aura:id="msgContainer" class="container" style="background: #fff;width: 100%;"></div>
+        	<div class="slds-section slds-is-open">
+            	<h3 class="slds-section__title slds-theme_shade slds-p-left_x-small">
+                	<lightning:buttonIcon class="aadjst_detail" 
+                                          iconName="utility:chevronright" 
+                                          variant="bare" 
+                                          onclick="{! c.toggleSection }" 
+                                          alternativeText="Settings" />
+                    	<span class="slds-truncate slds-p-horizontal_small" 
+                              title="Additional Adjustment Details">Additional Adjustment Details</span>
+                        </h3>
+                        <div aria-hidden="false" 
+                             id="aadjst_detail_div" 
+                             class="slds-section__content slds-m-left_xx-large slds-hide">
+                            <div class="slds-m-left_large slds-m-right_large slds-m-bottom_small">
+                                <div class="slds-wrap slds-grid">
+                                    <div class="slds-size--1-of-7 slds-col">
+                                    	<div class="slds-text-heading_small">Adjustment Reason</div>
+                                    </div>
+                                	<div class="slds-size--2-of-7 slds-col">
+                                        <ui:inputSelect class="slds-input dynamic" label=" "/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    </p>
+</aura:component>

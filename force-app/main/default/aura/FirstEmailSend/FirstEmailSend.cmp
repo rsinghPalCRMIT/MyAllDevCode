@@ -1,0 +1,14 @@
+<aura:component controller="FirstEmailSendController" implements="force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="emailAddress" type="string"/>
+    <aura:attribute name="subject" type="string"/>
+    <aura:attribute name="body" type="string"/>
+    
+    <div class="row">
+        <lightning:input type="email" name="Email" value="{!v.emailAddress}" label="Email field with predefined value" />
+    </div>
+    <lightning:input name="Subject" label="Text field with a placeholder" placeholder="type here..." value="{!v.subject}"/>
+    <lightning:inputRichText value="{!v.body}" placeholder="Type something interesting"/>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+	<ui:button aura:id="button" buttonTitle="Click to see what you put into the field" class="button" label="Click me" press="{!c.SendEmail}"/>
+    </div>
+</aura:component>

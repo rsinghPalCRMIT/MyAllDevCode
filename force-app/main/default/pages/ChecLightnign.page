@@ -1,0 +1,19 @@
+<apex:page standardcontroller="Account" sidebar="false">
+    {!account.Name}
+    <apex:includeLightning />
+    <div  id="compContainer" />
+    
+    <!--Here here skforce in script is my org namespace. if you are not using namespace in your org, 
+        then simply use c. like c:VFPageApp, c:VFPageComponent etc-->
+    <script>
+     $Lightning.use("c:VFPageApp", function() {
+         $Lightning.createComponent("c:VFPageComponent",
+             {PassesValueFromVF:"{!JSENCODE(Account.Name)}"},
+             "compContainer",
+             function(cmp) {
+                 console.log("c:VFPageApp loaded successfully in VF page");
+             }
+         );
+     });
+ </script>
+</apex:page>

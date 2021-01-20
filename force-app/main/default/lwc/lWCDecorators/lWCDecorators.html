@@ -1,0 +1,26 @@
+<!--
+  @File Name          : lWCDecorators.html
+  @Description        : 
+  @Author             : Rohit Pal
+  @Group              : 
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/14/2020   Rohit Pal     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:account">
+        <lightning-input label="Input"
+                         name="Input"
+                         value={messageapi} 
+                         placeholder="Please enter a value"
+                         onchange={handleChange}>
+        </lightning-input>
+        
+    </lightning-card>
+    <div>
+        <p> The message is {message} </p>
+
+        <p> The message is {messageapi} </p>
+        <p> The name is a getter is {name} </p>
+    </div>
+</template>

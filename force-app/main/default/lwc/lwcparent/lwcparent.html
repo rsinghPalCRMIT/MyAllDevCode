@@ -1,0 +1,20 @@
+<!--
+  @File Name          : lwcparent.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 4/15/2020, 8:34:52 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/14/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <div onsimple={handleSimpleEvent}>
+        <c-lwcchild  messgae="Message From Parent" pageno="1"></c-lwcchild>
+    </div>
+    <div>
+      <lightning-button variant="brand" label="Change Date" title="titleName" onclick={handleClick}></lightning-button>
+
+    </div>
+</template>

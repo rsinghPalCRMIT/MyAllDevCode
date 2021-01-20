@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+		
+        <aura:attribute name="Firstname" type="string"/>
+        <aura:attribute name="Lastname" type="string"/>
+        <aura:attribute name="semester" type="string[]" default="1,2,3,4,5,6,7,8"/>
+        <aura:attribute name="YearofPassedout" type="string[]" default="2010,2011,2012,2013,2014"/>
+         <aura:attribute name="TravelRequired" type="boolean"/>
+
+		<form class="slds-form--inline">
+            <h1>This is Student Ragistration Page</h1>
+    		<div class="col">
+            	<lightning:input name="Firstname" label="First Name" placeholder="type here..."/>
+            	<lightning:input name="Lastname" label="Last Name" placeholder="type here..."/>
+                
+                <ui:inputSelect class="single">
+                    <aura:iteration items="{!v.semester}" var="building">
+                    <ui:inputSelectOption text="{!building}" value="{!building}" Name="Select Semester"/>
+                        </aura:iteration>
+    			</ui:inputSelect>
+                <ui:inputCheckbox label="Travel Required " value="{!v.TravelRequired}"/>
+                <aura:if isTrue="{!v.TravelRequired}">
+    				<lightning:input name="DisFrom" label="Distance From" placeholder="type here..."/>
+                    <lightning:input name="DisTo" label="Distance To" placeholder="type here..."/>
+    				
+  				</aura:if> 
+    		</div>
+		</form>
+</aura:component>

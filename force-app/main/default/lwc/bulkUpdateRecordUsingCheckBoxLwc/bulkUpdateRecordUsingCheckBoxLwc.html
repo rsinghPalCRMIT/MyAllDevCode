@@ -1,0 +1,57 @@
+<!--
+  @File Name          : bulkUpdateRecordUsingCheckBoxLwc.html
+  @Description        : 
+  @Author             : Rohit
+  @Group              : 
+  @Last Modified On   : 18/5/2020, 10:49:27 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    18/5/2020   Rohit     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Account Table" icon-name="standard:account">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered">
+            <tr>
+                <th>
+                    Select
+                </th>
+                <th>
+                    Account Name
+                </th>
+                <th>
+                    Account Phone
+                </th>
+                <th>
+                    Account Description
+                </th>  
+            </tr>
+            <template for:each={accountLists.data} for:item="lstaccount" for:index="index">
+                <tr key={lstaccount.acc.Id}>
+                    <td>
+                        <lightning-input type="checkbox" 
+                                         value={lstaccount.isSelect}
+                                         accesskey={lstaccount.acc.Id}
+                                         data-id="checkbox"
+                                         id={lstaccount.acc.Id}
+                                         name={lstaccount.acc.Id}>
+                        </lightning-input>
+                    </td>
+                    <td>
+                        {lstaccount.acc.Name}
+                    </td>
+                    <td>
+                        {lstaccount.acc.Phone}
+                    </td>
+                    <td>
+                        {lstaccount.acc.Description}
+                    </td>
+                </tr>
+            </template>
+        </table>
+        <lightning-button variant="brand" 
+                          label="Delete" 
+                          title="Delete" 
+                          onclick={handleDelete}>
+        </lightning-button>
+    </lightning-card>
+</template>

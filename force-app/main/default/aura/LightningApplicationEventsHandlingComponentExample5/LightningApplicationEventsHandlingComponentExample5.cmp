@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:handler event="c:ApplicationEventExample5" action="{!c.handleSampleEvent}"/>
+    <aura:attribute name="setMeOnEventFiring" type="String" default="**nothing fired yet" />
+    <p>Anything? {!v.setMeOnEventFiring}</p>
+    
+    <c:ThirdComponentApplicationEventExample5/>
+</aura:component>

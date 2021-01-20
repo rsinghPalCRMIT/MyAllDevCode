@@ -1,0 +1,17 @@
+<!--
+  @File Name          : CheckChildAuraMethod.cmp
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified On   : 2/19/2020, 3:26:20 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/19/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+
+<aura:component>
+    <aura:method name="cChildAuraMethod" action="{!c.callCChildAUraMethod}" access="public">
+        <aura:attribute name="firstChildAuramethodAtt" type="String" default="Hello" />
+        <aura:attribute name="secondChildAuramethodAtt" type="String" default="World" />
+    </aura:method>
+</aura:component>

@@ -1,0 +1,10 @@
+<apex:page controller="CheckWithSharController">
+     <apex:form >
+         <apex:pageBlock >
+             <apex:pageBlockTable value="{!showRec}" var="tec">
+                 <apex:column value="{!tec.Name}"/>
+                  <apex:column value="{!tec.OwnerId}"/>
+             </apex:pageBlockTable>
+         </apex:pageBlock>
+     </apex:form>
+</apex:page>

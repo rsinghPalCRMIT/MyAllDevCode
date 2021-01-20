@@ -1,0 +1,29 @@
+<!--
+  @File Name          : myFirstLWCComponent.html
+  @Description        : 
+  @Author             : Rohit Pal
+  @Group              : 
+  @Last Modified On   : 3/1/2020, 12:40:26 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    3/1/2020   Rohit Pal     Initial Version
+-->
+<template>
+        <lightning-card title="My First Lightning Component" icon-name="custom:custom4">
+            <lightning-layout vertical-align="center">
+                <lightning-layout-item padding="around-small">
+                    <lightning-formatted-text value={name}></lightning-formatted-text>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <lightning-formatted-phone value={phone}></lightning-formatted-phone>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <lightning-formatted-email value={email}></lightning-formatted-email>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout vertical-align="center">
+                <lightning-button label="Button" variant="brand" onclick={handleClick}>
+                </lightning-button>
+            </lightning-layout>
+        </lightning-card>
+</template>

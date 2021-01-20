@@ -1,0 +1,10 @@
+<aura:component controller="CreateAccountIntv1Controller" access="global" >
+    <aura:attribute name="saveContacts" type="Contact" default="{'sobjectType': 'Contact',
+                                                                'LastName':'',
+                                                                'Email':''}"/>
+    
+            <lightning:input name="Last Name" label="Last Name" value="{!v.saveContacts.LastName}" />
+    <lightning:input type="email" label="Email" value="{!v.saveContacts.Email}" />
+    <lightning:button variant="brand" label="Save Contact" title="Brand action" onclick="{!c.handleClick}" />
+
+</aura:component>

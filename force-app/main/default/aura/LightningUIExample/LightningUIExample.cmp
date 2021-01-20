@@ -1,0 +1,19 @@
+<aura:component controller="LightningUIExampleController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                										  access="global" >
+    <aura:attribute name="strContactName" type="String"/>
+    <aura:attribute name="strContactPhone" type="String"/>
+    
+    <lightning:card title="Create" >
+        <lightning:layout>
+            <lightning:layoutItem>
+                <lightning:input  label="Contact Name"  value="{!v.strContactName}"/>
+                <lightning:input type="tel"  label="Contact Phone"  value="{!v.strContactPhone}"/>
+                
+                <lightning:button variant="brand" 
+                                  label="Create Contact" 
+                                  title="title" 
+                                  onclick="{! c.handleClick }"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </lightning:card>
+</aura:component>

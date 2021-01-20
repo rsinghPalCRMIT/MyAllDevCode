@@ -1,0 +1,40 @@
+<!--
+  @File Name          : parentContactListLwc.html
+  @Description        : 
+  @Author             : Rohit
+  @Group              : 
+  @Last Modified On   : 20/5/2020, 6:43:23 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    20/5/2020   Rohit     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Contact Child To Parent event" icon-name="standard:account">
+       <table>
+           <tr>
+               <th>
+                    Contact Name
+               </th>
+               <th>
+                    Contact Phone
+                </th>
+                <th>
+                    Contact Email
+                </th>
+           </tr>
+           <template for:each={contactList.data} for:item="con" for:index="index">
+                <tr key={con.Id}>
+                    <td>
+                        {con.Name}
+                    </td>
+                    <td>
+                        {con.Phone}
+                    </td>
+                    <td>
+                        {con.Email}
+                    </td>
+                </tr>
+           </template>
+       </table>
+    </lightning-card>
+</template>

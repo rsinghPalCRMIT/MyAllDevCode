@@ -1,0 +1,10 @@
+<apex:page standardController="Student__c" extensions="EncryptedFieldExtension">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:outputField value="{!Student__c.Credit_Card__c}"/>   
+                {!decryptedDataString}   
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

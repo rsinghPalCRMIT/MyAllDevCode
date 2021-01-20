@@ -1,0 +1,21 @@
+<!--
+  @File Name          : TestLightningInput.cmp
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 2/21/2020, 1:22:54 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2/21/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+<aura:attribute name="nameTest" type="String"/>
+<aura:handler name="change" value="{!v.value}" action="{!c.valueChangeValidation}"/>
+
+<div class="slds-col slds-size_4-of-12">
+    <lightning:input type="number" label="FTE" aura:id="genFTE1" step="0.01"
+                     onblur="{!c.validateFTE}"/>
+    <p><lightning:formattedText aura:id="fteError" class="error-text" value="Value must be between 0 and .49" /></p>
+</div>
+</aura:component>

@@ -1,0 +1,12 @@
+body{
+    text-justify: auto;
+}
+
+h1{
+    background-color: aqua;
+}
+p1{
+    text-align: center;
+    font-size: medium;
+    border: 10px;
+}

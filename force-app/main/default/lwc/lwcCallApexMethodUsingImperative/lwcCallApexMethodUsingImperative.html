@@ -1,0 +1,26 @@
+<!--
+  @File Name          : lwcCallApexMethodUsingImperative.html
+  @Description        : 
+  @Author             : CRohit
+  @Group              : 
+  @Last Modified On   : 4/16/2020, 7:45:21 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/16/2020   CRohit     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Case Details" icon-name="standard:case">
+        <div class="slds-m-around_small">
+            <lightning-input label="Case Subject"
+            value={subject}
+            onchange={handleChange}></lightning-input>
+
+            <template for:each={records} for:item="item">
+                <p key={item.Id}>
+                        {item.Subject}<br/>
+                        {item.Origin}
+                </p>    
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,61 @@
+<!--
+  @File Name          : lwcUpdateUserwithGroups.html
+  @Description        : 
+  @Author             : Rohit
+  @Group              : 
+  @Last Modified On   : 4/23/2020, 4:56:47 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/23/2020   Rohit     Initial Version
+-->
+<template>
+    <lightning-card  title="Add Groups Dynamically" icon-name="standard:user">
+       <template if:true={data}>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div title="Key">Select</div>
+                    </th>
+                    <th scope="col">
+                        <div title="Key">User Name</div>
+                    </th>
+                    <th scope="col">
+                        <div title="Value">Groups</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={data} for:item="keyValue">
+                    <tr key={keyValue.Id}>
+                        <th scope="col">
+                            <lightning-input type="checkbox" value={data.isSelect}></lightning-input>
+                        </th>
+                        <th scope="col">
+                            <lightning-combobox
+                                                name="progress"
+                                                label="Status"
+                                                placeholder="Select User"
+                                                options={optionsUser}
+                                                required
+                                        ></lightning-combobox>
+                        </th>
+                        <th scope="col">
+                            <lightning-combobox
+                                                name="progress"
+                                                label="Status"
+                                                placeholder="Select Progress"
+                                                options={optionsGroup}
+                                                required
+                                        ></lightning-combobox>
+                        </th>
+                        <th scope="col">
+                            <lightning-button variant="brand" label="Add Row" onclick={addRow}></lightning-button>
+                        </th>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+       </template>
+    </lightning-card>
+</template>

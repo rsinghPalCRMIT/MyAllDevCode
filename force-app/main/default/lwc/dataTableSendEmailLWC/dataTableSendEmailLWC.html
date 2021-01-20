@@ -1,0 +1,14 @@
+<template>
+    <lightning-card  title="Search Contact Info">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type = "search" onchange = {handleKeyChange} class = "slds-m-bottom_small" label = "Search" >
+            </lightning-input>    
+            <lightning-datatable
+                key-field="id"
+                data={contacts}
+                columns={columns}
+                onrowselection={handleRowAction}>
+        </lightning-datatable>     
+        </div>
+    </lightning-card>
+</template>

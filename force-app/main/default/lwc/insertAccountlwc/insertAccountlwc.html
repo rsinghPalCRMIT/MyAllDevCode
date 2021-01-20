@@ -1,0 +1,12 @@
+<!--
+ 
+-->
+<template>
+        <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:student__c">
+            <div class="slds-p-around_x-small">
+                <lightning-input label="Student Name" value={studentRecord.Name} onchange={handleNameChange}></lightning-input>
+                <lightning-input label="Travel Required" value={studentRecord.Is_Travel_Required__c} onchange={handleTravelChange}></lightning-input>
+                <lightning-button label="Save" onclick={handleClick}></lightning-button>
+            </div>
+        </lightning-card>
+</template>

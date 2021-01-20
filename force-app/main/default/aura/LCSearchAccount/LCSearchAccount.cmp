@@ -1,0 +1,10 @@
+<aura:component controller="LCSearchAccountController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    
+    <aura:attribute name="accountName" type="string" default=""/>
+    <aura:attribute name="listOfAccount" type="Account[]" description="store accounts with there child contacts"/>
+    <lightning:input name="input2" label="Search Account" value="{!v.accountName}" onchange="{!c.searchAccount}"/>
+
+    <aura:iteration items="{!v.listOfAccount}" var="acc">
+        Account Name - {!acc.Name}<br/>
+    </aura:iteration>
+</aura:component>

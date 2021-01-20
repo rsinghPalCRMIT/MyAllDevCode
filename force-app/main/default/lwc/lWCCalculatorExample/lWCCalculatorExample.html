@@ -1,0 +1,32 @@
+<!--
+  @File Name          : lWCCalculatorExample.html
+  @Description        : 
+  @Author             : Rohit Pal
+  @Group              : 
+  @Last Modified On   : 4/14/2020, 7:37:18 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/14/2020   Rohit Pal     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="LWC Calculator" icon-name="standard:account">
+        <lightning-input type="number" 
+                         variant="brand" 
+                         name = "Input 1" 
+                         label="Input 1" 
+                         placeholder="type here..."
+                         onchange={handlechange}></lightning-input>
+        <lightning-input type="number" 
+                         variant="brand" 
+                         name = "Input 2" 
+                         label="Input 2" 
+                         placeholder="type here..."
+                         onchange={handlechange}></lightning-input>
+        <!--
+
+        -->
+    </lightning-card>
+    <lightning-button variant="brand" label="SUM" onclick={doSum}></lightning-button>
+    <lightning-button variant="brand" label="Min" onclick={doMin}></lightning-button>
+    <lightning-button variant="brand" label="Div" onclick={doDiv}></lightning-button>
+</template>

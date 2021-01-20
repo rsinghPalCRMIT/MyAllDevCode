@@ -1,0 +1,17 @@
+@page:first{
+	@top-right {
+      
+      content: counter();
+          font-weight: lighter;
+          font-size:8pt;
+        }
+}
+@page {
+	@top-right {
+      
+      content: "Page " counter(page) " of " counter(pages);
+          font-weight: lighter;
+          font-size:8pt;
+        }
+}			
+

@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="message" type="string"/>
+    <aura:attribute name="todaysDate" type="Date"/>
+    <aura:attribute name="todaysDateTime" type="DateTime"/>
+    
+    <aura:handler name="init" action="{!c.showDate}" value="{!this}" />
+   <!-- <aura:handler name="init1" action="{!c.showDateTime}" value="{!this}" /> -->
+    <p>
+    	Message of the Day ! {!v.message}
+    </p>
+    
+    <lightning:button label="You look nice today." onclick="{!c.handleClick}"/>
+	<lightning:button label="Today is going to be a great day!" onclick="{!c.handleClick}"/>
+   <!-- <lightning:button label="Click Here to Print today Date" onclick="{!c.showDate}"/> -->
+    <p>The Current Date is : {!v.todaysDate}</p>
+    <p>The Current Date Time is {!v.todaysDateTime}</p>
+    
+</aura:component>

@@ -1,0 +1,116 @@
+<!--
+  @File Name          : lwcDynamicRow.html
+  @Description        : 
+  @Author             : Rohit Pal
+  @Group              : 
+  @Last Modified On   : 14/5/2020, 1:56:01 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    5/12/2020   Rohit Pal     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:account">
+        <lightning-button-icon  icon-name="utility:down" 
+                                variant="border-filled" 
+                                alternative-text="Show More" 
+                                slot="actions"></lightning-button-icon>
+        <div slot="footer">
+            <lightning-button variant="brand" 
+                              label="Add" 
+                              title="titleName" 
+                              onclick={addRow}>
+                            </lightning-button>
+            <lightning-button variant="brand" 
+                              label="Save" 
+                              title="titleName" 
+                              onclick={saveMultipleAccounts}>
+                            </lightning-button>
+        </div>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div title="Key">S No</div>
+                    </th>
+                    <th scope="col">
+                        <div title="Value">Account Name</div>
+                    </th>
+                    <th scope="col">
+                        <div title="Value">Account Industry</div>
+                    </th>
+                    <th scope="col">
+                        <div title="Value">Account Phone</div>
+                    </th>
+                    <th scope="col">
+                        <div title="Value">Action</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={accountRecList} for:item="account" for:index="index">
+                    <tr key={keyIndex}>
+                       <td>
+                           {index}
+                       </td>
+                       <td>
+                           <lightning-input type="text" 
+                                            name="accName" 
+                                            id={index}
+                                            access-key={index}
+                                            value={account.Name}
+                                            onchange={changeHandler}
+                                            placeholder="type here...">
+                            </lightning-input>
+                        </td>
+                        <td><!--
+                            <lightning-input type="text" 
+                                name="accIndustry" 
+                                id={index}
+                                access-key={index}
+                                value={account.Industry}
+                                onchange={changeHandler}
+                                placeholder="type here...">
+                            </lightning-input>
+                           
+                            <template if:true={picklistValues.data}>                     
+                                    <select name="accIndustry" onchange={changeHandler} id={index} accesskey={index}>
+                                        <template for:each={picklistValues.data.values} 
+                                                  for:item="item">
+                                            <option key={item.value}>{item.label}</option>
+                                        </template>
+                                    </select>
+                            </template> -->
+                            <lightning-combobox name="accIndustry"
+                                                value="None"
+                                                accesskey={index}
+                                                id={index}
+                                                placeholder="Select Progress"
+                                                options={options}
+                                                onchange={changeHandler}>
+                            </lightning-combobox>
+                        </td>
+                        <td>
+                            <lightning-input type="text" 
+                                             name="accPhone" 
+                                             id={index}
+                                             access-key={index}
+                                             value={account.Phone}
+                                             onchange={changeHandler}
+                                             placeholder="type here...">
+                            </lightning-input>
+                        </td>
+                        <td>
+                            <lightning-button-icon variant="base" 
+                                                   size="small" 
+                                                   icon-name="action:delete" 
+                                                   access-key={index}
+                                                   onclick={removeRow}
+                                                   alternative-text="click to delete ">
+                            </lightning-button-icon>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

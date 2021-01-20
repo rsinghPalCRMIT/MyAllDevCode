@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:method name="compMtd" action="{!c.callFromCompMetd}">
+        <aura:attribute type="String" name="Str" default="testing"/>
+    </aura:method>
+    <ui:button label="Click" press="{!c.callBtn}"/>
+</aura:component>

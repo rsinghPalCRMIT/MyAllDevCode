@@ -1,0 +1,6 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId" access="global">
+    <aura:attribute name="accName" type="String"/>
+    
+    <ui:inpuTtext  value="{!v.accName}" label="Account Name"/>
+    <lightning:button label ="Save" onclick="{!c.saveAccount}"/>
+</aura:component>

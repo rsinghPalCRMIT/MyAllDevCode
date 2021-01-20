@@ -1,0 +1,34 @@
+<!--
+  @File Name          : myFirstColorWebComponent.html
+  @Description        : 
+  @Author             : Rohit Pal
+  @Group              : 
+  @Last Modified On   : 4/13/2020, 7:58:27 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/4/2020   Rohit Pal     Initial Version
+-->
+<template>
+  
+  <template if:true={isTom}>
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f6/Tom_Tom_and_Jerry.png"
+    height="100"
+    width="100"/>
+  </template>
+ 
+  <template if:true={isJerry}>
+    <img src="https://upload.wikimedia.org/wikipedia/en/2/2f/Jerry_Mouse.png"
+       height="100"
+       width="100"/>
+  </template>
+
+  <lightning-button label="show Tom" 
+                    variant="brand" 
+                    onclick={showTom}>
+  </lightning-button>
+  
+  <lightning-button label="show Jerry" 
+                    variant="brand" 
+                    onclick={showJerry}>
+  </lightning-button>
+</template>

@@ -1,0 +1,8 @@
+.THIS .error-text {
+    display:none;
+}
+
+.THIS .show {
+    display:flex;
+    color:red;
+}

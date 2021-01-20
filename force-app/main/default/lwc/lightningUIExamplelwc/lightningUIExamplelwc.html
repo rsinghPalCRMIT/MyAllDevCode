@@ -1,0 +1,38 @@
+<!--
+  @File Name          : lightningUIExamplelwc.html
+  @Description        : 
+  @Author             : Rohit Pal
+  @Group              : 
+  @Last Modified On   : 28/6/2020, 9:03:24 am
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    27/6/2020   Rohit Pal     Initial Version
+-->
+<template>
+    <lightning-card  title="Create Contact" icon-name="standard:contact">
+       <lightning-layout multiple-rows>
+           <lightning-layout-item padding="around-small">
+               <lightning-input type="text" 
+                                name="name" 
+                                label="Contact Name" 
+                                placeholder="type here..."
+                                value={conRecord.LastName}
+                                onchange={handleInput}>
+                </lightning-input>
+                <lightning-input type="tel" 
+                                 variant="standard" 
+                                 name="name" 
+                                 value={conRecord.Phone}
+                                 label="COntact Phone" 
+                                 placeholder="type here..."
+                                 onchange={handlePhone}>
+                </lightning-input>
+                <lightning-button variant="brand" 
+                                  label="Create Contact" 
+                                  title="titleName" 
+                                  onclick={handleClick}>
+                </lightning-button>
+           </lightning-layout-item>
+       </lightning-layout>
+    </lightning-card>
+</template>

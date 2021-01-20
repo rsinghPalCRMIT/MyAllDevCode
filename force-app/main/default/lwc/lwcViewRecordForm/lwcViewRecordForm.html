@@ -1,0 +1,25 @@
+<!--
+  @File Name          : lwcViewRecordForm.html
+  @Description        : 
+  @Author             : Rohit
+  @Group              : 
+  @Last Modified On   : 4/16/2020, 3:32:03 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/16/2020   Rohit     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="LWC View Record Form" icon-name="standard:account">
+        <div class="slds-m-around_small">
+           <lightning-record-view-form
+                       record-id={recordId}
+                       object-api-name={objectApiName}>
+               <div class="slds-box slds-theme_default">
+                   <lightning-output-field field-name="LastName"></lightning-output-field>
+                   <lightning-output-field field-name="Phone"></lightning-output-field>
+                   <lightning-output-field field-name="Email"></lightning-output-field>
+               </div>
+           </lightning-record-view-form>
+        </div>
+    </lightning-card>
+</template>

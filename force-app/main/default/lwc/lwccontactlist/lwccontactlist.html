@@ -1,0 +1,23 @@
+<!--
+  @File Name          : lwccontactlist.html
+  @Description        : 
+  @Author             : Rohit Pal
+  @Group              : 
+  @Last Modified On   : 4/14/2020, 11:44:36 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/14/2020   Rohit Pal     Initial Version
+-->
+<template>
+    <div>
+        <lightning-card  variant="Narrow"  title="Contact List" icon-name="standard:contact">
+
+        <template if:true={contacts}>
+            <template for:each={contacts} for:item="con">
+                <c-lwcsinglecontact contact={con} key={con.Id}></c-lwcsinglecontact>
+            </template>
+        </template>
+    </lightning-card>
+
+    </div>
+</template>

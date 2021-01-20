@@ -1,0 +1,30 @@
+<!--
+  @File Name          : lwcCreateRecordUsingApex.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 4/21/2020, 6:10:22 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/20/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <c-lwc-create-record-using-apex-child onnewrecord={handleNewRecord}></c-lwc-create-record-using-apex-child>
+    <br/>
+    <lightning-slider label="Account Limit" step="5" value={val} onchange={handleChange}></lightning-slider>
+    <br/>
+    <lightning-card  variant="Narrow"  title="Create Account" icon-name="standard:account">
+        <div style="height: 300px">
+            <lightning-datatable
+                    key-field="id"
+                    data={records}
+                    columns={columns}>
+            </lightning-datatable>
+    </div>
+    </lightning-card>
+    <!--
+
+    -->
+    
+</template>

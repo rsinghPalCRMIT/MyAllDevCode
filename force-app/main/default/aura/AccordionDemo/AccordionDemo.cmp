@@ -1,0 +1,105 @@
+<aura:component controller="AccordionAuraController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+  <!--on component load call doInit javaScript function and fetch records from server-->  
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <!--<aura:attribute name="conList" type="List"/>
+              <aura:attribute name="value" type="List" default="option1"/>
+ <aura:attribute name="options" type="List" default="[
+                        {'label': 'Ross', 'value': 'option1'},
+                        {'label': 'Rachel', 'value': 'option2'}
+                        ]"/>
+    <div class="slds-m-around_x-large">
+        
+        <lightning:accordion >
+            <aura:iteration items="{!v.conList}" var="con">
+                <ui:inputCheckbox aura:id="checkbox" change="{!c.onCheck}"/>
+                <lightning:accordionSection name="{!con.name}" label="{!con.Name}">
+                    
+
+    <lightning:checkboxGroup name="Checkbox Group"
+                             label="Checkbox Group"
+                             options="{!v.conList}"
+                             value="{!con.Email}"
+                             onchange="{! c.handleChange }"/>
+                    <aura:set attribute="body">
+                        <p><b>Street</b> : {!con.MailingStreet}</p>
+                        <p><b>City</b> : {!con.MailingCity}</p>
+                        <p><b>State</b> : {!con.MailingState}</p>
+                        <p><b>Postcode</b> : {!con.MailingPostalcode}</p>
+                        <p><b>Country</b> : {!con.MailingCountry}</p>
+                        <p><b>Email</b> : {!con.Email}</p>
+                        <p><b>Phone</b> : {!con.Phone}</p>
+                    </aura:set>
+                </lightning:accordionSection>
+            </aura:iteration>
+        </lightning:accordion>
+        
+    </div>-->
+    <aura:attribute name="accList" type="Account[]" default="[{'Name' : 'ABC'} , {'Name':'DEF'}]"/>
+            <lightning:accordion aura:id="accordion" allowMultipleSectionsOpen="true">
+                <aura:iteration items="{!v.accList}" var="acc">
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                        
+                        <tr class="slds-text-title_caps">
+                            <th style="width:3.25rem;" class="slds-text-align_right">
+                                <div class="slds-form-element">
+                                    <div class="slds-form-element__control">
+                                        <label class="slds-checkbox">
+                                            <ui:inputCheckbox disabled="{!v.totalRecordsCount == 0}"
+                                                              aura:id="selectAllId"
+                                                              change="{!c.selectAllCheckbox}"/>
+                                            <span class="slds-checkbox_faux"></span>
+                                            <span class="slds-form-element__label"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </th>
+                            <td>
+                        <lightning:accordionSection name="A" label="{!acc.Name}" >
+                            <!--<ui:inputCheckbox aura:id="checkbox" change="{!c.onCheck}"/>-->
+                            <aura:set attribute="body">
+                                <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal"
+                                       role="grid">
+                                    <thead>
+                                        <tr>
+                                            <th class="slds-is-sortable slds-cell-wrap" scope="col">
+                                                
+                                            </th>
+                                            <th class="slds-is-sortable slds-cell-wrap" scope="col">
+                                                Name
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <aura:iteration items="{!acc.Contacts}" var="con">
+                                            
+                                            <tr class="slds-hint-parent">
+                                                <th style="width:3.25rem;" class="slds-text-align_right">
+                                                    <div class="slds-form-element">
+                                                        <div class="slds-form-element__control">
+                                                            <label class="slds-checkbox">
+                                                                <ui:inputCheckbox disabled="{!v.totalRecordsCount == 0}"
+                                                                                  aura:id="selectAllId"
+                                                                                  change="{!c.selectAllCheckbox}"/>
+                                                                <span class="slds-checkbox_faux"></span>
+                                                                <span class="slds-form-element__label"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <td role="gridcell" class="slds-cell-wrap">
+                                                    <div class="">{!con.LastName}</div>
+                                                </td>
+                                            </tr>
+                                        </aura:iteration>
+                                    </tbody>
+                                </table>
+                            </aura:set>
+                        </lightning:accordionSection>
+                         </td>
+                        </tr>
+                    </table>
+                </aura:iteration>
+                
+            </lightning:accordion>
+</aura:component>

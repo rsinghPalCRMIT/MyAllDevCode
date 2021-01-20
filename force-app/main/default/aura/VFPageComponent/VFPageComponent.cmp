@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="PassesValueFromVF" type="string"/>
+    Account name Passed from VF Page: {!v.PassesValueFromVF}"
+	
+</aura:component>

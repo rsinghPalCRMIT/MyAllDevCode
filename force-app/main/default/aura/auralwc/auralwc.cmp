@@ -1,0 +1,20 @@
+<!--
+  @File Name          : auralwc.cmp
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 4/15/2020, 9:51:50 PM
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    4/15/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<aura:component>
+
+    <lightning:card title="LWC AURA Calling lwc method" iconName="custom:custom34">
+            
+            <c:lwcaura onselect="{!c.doHandle}" aura:id="childcmp"></c:lwcaura>
+            <lightning:button label="call LWC method" variant="brand" onclick="{!c.callChild}"></lightning:button>
+    </lightning:card>
+
+</aura:component>

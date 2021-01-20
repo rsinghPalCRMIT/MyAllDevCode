@@ -1,0 +1,14 @@
+<aura:component controller="CRMInputController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name ="conName" type="String" />
+    <aura:attribute name ="conPhone" type="String" />
+    <aura:attribute name ="conEmail" type="String" />
+    <aura:attribute name ="myContactId" type="String" />
+    <h1>This is used to create Contact </h1>
+    
+    <lightning:input name="ContactName" label="Contact Name" value="{!v.conName}"/>
+    <lightning:input type="number" name="input1" label="Contact Phone"  value="{!v.conPhone}"/>
+    <lightning:input type="email" name="email1" value="{!v.conEmail}" label="Contact Email" />
+    <br/>
+        <lightning:button variant="brand" label="Save Contact" title="Brand action" onclick="{!c.handleClick }" />
+
+</aura:component>

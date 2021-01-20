@@ -1,0 +1,12 @@
+<template>
+        <lightning-input type="checkbox" label="Show details" onchange={handleChange}></lightning-input>
+
+
+        <template if:true={isDisable}>
+                This is enable
+        </template>
+        <template if:false={isDisable}>
+                This is disable
+            </template>
+    
+</template>

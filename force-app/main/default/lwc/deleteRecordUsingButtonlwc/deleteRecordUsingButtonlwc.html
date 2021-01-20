@@ -1,0 +1,47 @@
+<!--
+  @File Name          : deleteRecordUsingButtonlwc.html
+  @Description        : 
+  @Author             : Rohit
+  @Group              : 
+  @Last Modified On   : 18/5/2020, 6:45:41 pm
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    18/5/2020   Rohit     Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Delete From Table" icon-name="standard:account">
+        <table>
+            <tr>
+                <th>
+                    Account Name
+                </th>
+                <th>
+                    Account Phone
+                </th>
+                <th>
+                    Account Description
+                </th>
+            </tr>
+            <template for:each={accounts.data} for:item="acc" for:index="index">
+                <tr key={acc.Id}>
+                    <td>
+                        {acc.Name}
+                    </td>
+                    <td>
+                        {acc.Phone}
+                    </td>
+                    <td>
+                        {acc.Description}
+                    </td>
+                    <td>
+                        <lightning-button variant="brand" 
+                                          label="Update" 
+                                          value={acc.Id}
+                                          onclick={handleDelete}>
+                        </lightning-button>
+                    </td>
+                </tr>
+            </template>
+        </table>
+    </lightning-card>
+</template>

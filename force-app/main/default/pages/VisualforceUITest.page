@@ -1,0 +1,14 @@
+<apex:page lightningStylesheets="true" standardController="Account">
+      
+      <apex:form >
+      <apex:pageblock title="Sample Visualforce Page">
+          <apex:pageBlockSection >
+          <apex:inputField value="{!Account.Name}"/>
+          </apex:pageBlockSection>
+     
+      <apex:pageBlockButtons >
+          <apex:commandButton value="Save"/>
+      </apex:pageBlockButtons>
+       </apex:pageblock>
+      </apex:form>
+</apex:page>
